@@ -1,0 +1,132 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display:flex;
+	justify-content: center;
+}
+
+
+.container {
+	width: 90%;
+	min-height: 100vh;
+	display: flex;
+}
+
+.leftContainer {
+	display:flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width:100%;
+	overflow-y: auto;
+	background-color: #252A41;
+}
+
+.header{
+	width:100%;
+	height:60px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px black solid;
+}
+.pageTitle {
+	margin-left: 30px;
+	color:white;
+	font-size: 40px;
+}
+
+
+.addcard{
+	height:40px;
+	margin-right:10px;
+	color:white;
+}
+
+.addCard:hover{
+	cursor:pointer;
+	color: #2fd310;
+}
+.addCard i{
+	font-size: 40px;
+}
+
+.cardContainer {
+	width: 100%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: flex-start;
+
+}
+
+.card {
+	height:500px;
+	width:300px;
+	border-radius: 20px;
+	margin:20px;
+	background: linear-gradient(45deg, #2fd310 0%, #3a74e2 100%);
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+}
+.deleteCard{
+	align-self:flex-end;
+	margin: 10px 10px 0 0;
+}
+.deleteCard i{
+	font-size: 20px;
+	color:white;
+}
+
+.deleteCard i:hover{
+	cursor: pointer;
+	color: #252A41;
+}
+
+.cardTitle {
+	width:100%;
+	height:50px;
+	display:flex;
+	justify-content: center;
+}
+
+.cardTitle input{
+	width: 90%;
+	height: 100%;
+	outline: none;
+	border: none;
+	font-size:30px;
+	background-color:inherit;
+
+}
+
+.itemContainer {
+	height:100%;
+	width:100%;
+	display:flex;
+	flex-direction: column;
+}
+
+.addItem {
+	margin: 5px 5px 0 15px;
+	color:white;
+}
+
+.addItem i:hover{
+	cursor:pointer;
+	color: #252A41;
+}
+
+.itemTitle {
+	width: 90%;
+	outline: none;
+	border: none;
+	font-size:15px;
+	background-color:inherit;
+}
+
+.rightContainer {
+
+	
+}
