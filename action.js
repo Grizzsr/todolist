@@ -1,21 +1,85 @@
-class todoCards {
-    constructor(todoid, todoTitle, dateCreated, todoItems,) {
-        this.todoid = todoid;
-        this.todoTitle = todoTitle;
-        this.dateCreated = dateCreated;
-        this.todoItems = [];
+
+
+
+let SAVED_CARD_DATA = "savedTodoLists";
+
+Freshdata();
+Printpage();
+
+function Freshdata() {
+    let cardData = localStorage.getItem(SAVED_CARD_DATA);
+    let parsedCard = JSON.parse(cardData);
+    for ( let i = 0; i < parsedCard.collection.length; i++ ) {
+        let theCard = new todoCards(parsedCard.collection[i].cardid, parsedCard.collection[i].todoTitle, parsedCard.collection[i].todoItems);
+        cardArray.collection.push(theCard);
+        for (let j = 0; j < parsedCard.collection[i].collection.length; j++) {
+            let theItem = new item(parsedCard.collection[i].collection[j].itemId, parsedCard.collection[i].collection[j].itemName, parsedCard.collection[i].collection[j].itemComplete);
+            cardArray.collection[i].collection.push(theItem);
+        }
     }
 }
 
-class item {
-    constructor(itemId, itemName) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.itemComplete = false;
+
+
+function Printpage() {
+    $("#cardContainer").html("");
+    for (let i = 0; i < cardArray.collection.length; i++) {
+        let cards = cardArray.collection[i];
+        let items = "";
+        for (let j = 0; j < cards.collection.length; j++) {
+            items += `<div class="cardItem"><input onclick="deleteItem()" type="checkbox"><input onkeyup="addItemTitle(${i},${j},this.value)" class="itemTitle" placeholder="Add Item"</div>`;
+        }
+        $("#cardContainer").append(`<div class="card" id=${cards.cardid}>
+                    <div class="deleteCard" onclick="cardDelete(${i})"><i class="far fa-times-circle"></i></div>
+                    <div class="cardTitle"><input onkeyup="addTitle(${i}, this.value)" value="${cards.todoTitle}" type="text" placeholder="ToDo Title"></div>
+                    <div class="itemContainer">
+                        <div class="addItem" >
+                        <i onclick="addItemToCard(${i})" class="far fa-plus-square"></i>
+                        </div>
+                        ${items}
+                    </div>
+                    <button class="clearChecked" onclick="deleteItems()">Clear Completed</button>
+                </div>`);
     }
 }
 
-let cardArray = [];
+function addCard() {
+    let newid = Math.floor(Math.random() * 99999999);
+    cardArray.add(newid, "");
+    saveCards();
+    Printpage();
+}
+
+function addTitle(cardid, title) {
+    cardArray.collection[cardid].todoTitle = title;
+    saveCards();
+    Printpage;
+}
+
+function cardDelete(listnumber) {
+    cardArray.collection.splice(listnumber, 1);
+    saveCards();
+    Printpage();
+}
+
+function addItemToCard(cardvalue) {
+    cardArray.collection[cardvalue].add();
+    saveCards();
+    Printpage();
+}
+
+function addItemTitle(cardid, itemid title) {
+    cardArray.collection[cardid].todoTitle = title;
+    saveCards();
+    Printpage;
+}
+
+function saveCards() {
+    let savedData = JSON.stringify(cardArray);
+    localStorage.setItem(SAVED_CARD_DATA,savedData )
+}
+
+/*
 let SAVED_CARD_DATA = "savedTodoLists";
 
 (function cardDataRefresh() {
@@ -37,10 +101,9 @@ let SAVED_CARD_DATA = "savedTodoLists";
             let theItem = new item(parsedCard[i].todoItems[j].itemId, parsedCard[i].todoItems[j].itemName, parsedCard[i].todoItems[j].itemComplete);
             cardArray[i].todoItems.push(theItem);
             console.log('#' + parsedCard[i].todoid);
-            $('#' + parsedCard[i].todoid).find(".addItem:first").append(`<div id="${parsedCard[i].todoItems[j].itemId}" class="cardItem"><input onclick="deleteItem.call(this)" type="checkbox"><input onkeyup="addItemTitle.call(this)" class="itemTitle" placeholder="Add Item" value="${parsedCard[i].todoItems[j].itemName}"</div>`);
+            $('#' + parsedCard[i].todoid).find(".addItem:first").append(`<div id="${parsedCard[i].todoItems[j].itemId}" class="cardItem"><input onclick="deleteItem.call(this)" type="checkbox"><input onkeyup="addItemTitle.call(this)" class="itemTitle" placeholder="Add Item" value="${parsedCard[i].todoItems[j].itemName}"<input id="deleteItem"</div>`);
 
         }
-
     }
 })();
 
@@ -56,6 +119,7 @@ function createCard() {
                         <div class="addItem"  ><i onclick="addItemToCard.call(this)" class="far fa-plus-square"></i>
                         </div>
                     </div>
+                    <button id="clearChecked" onclick="deleteItems.call(this)">Clear Completed</button>
                 </div>`);
     saveCards();
 
@@ -112,6 +176,7 @@ function addItemTitle() {
                 }
             }
             saveCards();
+            location.reload();
         }
     }
 }
@@ -127,6 +192,7 @@ function deleteItem() {
                 }
             }
             saveCards();
+            location.reload();
         }
     }
 }
@@ -136,13 +202,4 @@ function saveCards() {
     localStorage.setItem(SAVED_CARD_DATA,savedData )
 }
 
-
-//let userData = localStorage.getItem("cardData");
-//let cardArray = JSON.parse(userData);
-
-
-/*
-function persistSelectedChat() {
-let chatString = JSON.stringify.(selectedChat);
-localStorage.
 */

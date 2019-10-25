@@ -4,7 +4,8 @@
 		<title>BrainCloud</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="myScript.js" defer></script>
+		<script src="model.js" defer></script>
+		<script src="action.js" defer></script>
 		<script src="https://kit.fontawesome.com/04aa440956.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="main.css">
 		
@@ -15,10 +16,10 @@
 			<div class="leftContainer">
 				<div class="header">
 					<div class="pageTitle">Brain Cloud</div>
-					<div class="addCard" onclick="createCard()" ><i class="far fa-plus-square"></i>
+					<div class="addCard" onclick="addCard()" ><i class="far fa-plus-square"></i>
 					</div>
 				</div>
-				<div class="cardContainer">
+				<div id="cardContainer">
 
 
 
