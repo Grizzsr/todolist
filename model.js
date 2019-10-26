@@ -13,16 +13,16 @@ class todoCards {
         this.cardid = cardid;
         this.todoTitle = todoTitle;
         this.collection = [];
-        this.add = function(itemName) {
-            this.collection.push(new item(itemName))
+        this.add = function(itemName,itemComplete) {
+            this.collection.push(new item(itemName,itemComplete))
         }
     }
 }
 
 class item {
-    constructor(itemName) {
+    constructor(itemName,itemComplete) {
         this.itemName = itemName;
-        this.itemComplete = false;
+        this.itemComplete = itemComplete;
     }
 }
 

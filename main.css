@@ -125,8 +125,24 @@ html, body {
 	border: none;
 	font-size:15px;
 	background-color:inherit;
+	color:#252A41;
+}
+.cardItem{
+	margin:2px 5px;
+	color:#252A41;
+}
+.clearChecked{
+	margin: auto auto;
 }
 
+.itemDelete {
+	color:white;
+}
+
+.itemDelete:hover{
+	cursor:pointer;
+	color:#252A41;
+}
 .rightContainer {
 
 	
