@@ -41,7 +41,7 @@ html, body {
 .addcard{
 	height:40px;
 	margin-right:10px;
-	color:white;
+	color: #7C7C7C;
 }
 
 .addCard:hover{
@@ -63,9 +63,9 @@ html, body {
 .card {
 	height:500px;
 	width:300px;
-	border-radius: 20px;
+	border-radius: 5px;
 	margin:20px;
-	background: linear-gradient(45deg, #2fd310 0%, #3a74e2 100%);
+	background: linear-gradient(45deg, #2fb7f0 0%, #3a74e2 100%);
 	display:flex;
 	flex-direction:column;
 	align-items: center;
@@ -76,7 +76,7 @@ html, body {
 }
 .deleteCard i{
 	font-size: 20px;
-	color:white;
+	color:whitesmoke;
 }
 
 .deleteCard i:hover{
@@ -98,7 +98,7 @@ html, body {
 	border: none;
 	font-size:30px;
 	background-color:inherit;
-	color: whitesmoke;
+	color: #00EE18;
 
 }
 
@@ -112,7 +112,7 @@ html, body {
 
 .addItem {
 	margin: 5px 5px 0 5px;
-	color:white;
+	color:whitesmoke;
 }
 
 .addItem i:hover{
@@ -126,7 +126,7 @@ html, body {
 	border: none;
 	font-size:15px;
 	background-color:inherit;
-	color:white;
+	color:#00EE18;
 }
 .cardItem{
 	margin:2px 5px;
@@ -136,7 +136,7 @@ html, body {
 }
 
 .itemDelete {
-	color:white;
+	color:whitesmoke;
 }
 
 .itemDelete:hover{
