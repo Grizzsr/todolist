@@ -111,7 +111,7 @@ html, body {
 }
 
 .addItem {
-	margin: 5px 5px 0 15px;
+	margin: 5px 5px 0 5px;
 	color:white;
 }
 
@@ -126,11 +126,10 @@ html, body {
 	border: none;
 	font-size:15px;
 	background-color:inherit;
-	color:#252A41;
+	color:white;
 }
 .cardItem{
 	margin:2px 5px;
-	color:#252A41;
 }
 .clearChecked{
 	margin: auto auto;

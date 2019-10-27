@@ -27,11 +27,11 @@ function Printpage() {
         let cards = cardArray.collection[i];
         let items = "";
         for (let j = 0; j < cards.collection.length; j++) {
-            items += `<div class="cardItem"><span class="checkcomplete" type="checkbox"></span><input onkeyup="addItemTitle(${i},${j},this.value)" class="itemTitle" value="${cards.collection[j].itemName}" placeholder="Add Item"><span class="itemDelete" onclick="itemDelete(${i}, ${j})"><i class="far fa-times-circle"></i></span> </div>`;
+            items += `<div class="cardItem"><span class="checkcomplete" type="checkbox"></span><input onkeyup="addItemTitle(${i},${j},this.value)" class="itemTitle" value="${cards.collection[j].itemName}" placeholder="Enter Item"><span class="itemDelete" onclick="itemDelete(${i}, ${j})"><i class="far fa-times-circle"></i></span> </div>`;
         }
         $("#cardContainer").append(`<div class="card" id=${cards.cardid}>
                     <div class="deleteCard" onclick="cardDelete(${i})"><i class="far fa-times-circle"></i></div>
-                    <div class="cardTitle"><input onkeyup="addTitle(${i}, this.value)" value="${cards.todoTitle}" type="text" placeholder="ToDo Title"></div>
+                    <div class="cardTitle"><input onkeyup="addTitle(${i}, this.value)" value="${cards.todoTitle}" type="text" placeholder="Enter List Name"></div>
                     <div class="itemContainer">
                         <div class="addItem"><i onclick="addItemToCard(${i})" class="far fa-plus-square"></i></div>
                         ${items}
