@@ -20,7 +20,7 @@ html, body {
 	min-height: 100vh;
 	width:100%;
 	overflow-y: auto;
-	background-color: 7C7C7C;
+	background-color: #252A41;
 }
 
 .header{
@@ -33,7 +33,7 @@ html, body {
 }
 .pageTitle {
 	margin-left: 30px;
-	color:EEE5E9;
+	color:white;
 	font-size: 40px;
 }
 
@@ -41,7 +41,7 @@ html, body {
 .addcard{
 	height:40px;
 	margin-right:10px;
-	color:EEE5E9;
+	color:white;
 }
 
 .addCard:hover{
@@ -98,7 +98,7 @@ html, body {
 	border: none;
 	font-size:30px;
 	background-color:inherit;
-	color: orangered;
+	color: whitesmoke;
 
 }
 
